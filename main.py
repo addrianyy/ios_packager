@@ -35,7 +35,7 @@ with TemporaryDirectory() as working_directory:
     run_required_process(
         ["codesign", "--force", "--deep",
          "--entitlements", entitlements_path,
-         "--sign", app.cert_name,
+         "--sign", "Apple Development",
          app.path,
          ])
 

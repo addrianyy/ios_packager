@@ -71,5 +71,4 @@ def app_info_from_cmdline() -> Optional[AppInfo]:
     apple_dev_cert = apple_dev_cert_from_env()
 
     return AppInfo(path=app_directory, executable_name=executable_name, bundle_name=bundle_name,
-                   bundle_id=bundle_id, cert_name=apple_dev_cert.name,
-                   cert_team=apple_dev_cert.team)
+                   bundle_id=bundle_id, cert_team=apple_dev_cert.team)

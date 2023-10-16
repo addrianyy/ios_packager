@@ -5,7 +5,6 @@ from dataclasses import dataclass
 
 @dataclass
 class AppleDevelopmentCertificate:
-    name: str
     team: str
 
 
@@ -16,5 +15,4 @@ def get_env(key: str) -> str:
 
 
 def apple_dev_cert_from_env() -> AppleDevelopmentCertificate:
-    return AppleDevelopmentCertificate(name=get_env("APPLE_DEVELOPMENT_CERT_NAME"),
-                                       team=get_env("APPLE_DEVELOPMENT_CERT_TEAM"))
+    return AppleDevelopmentCertificate(team=get_env("APPLE_DEVELOPMENT_CERT_TEAM"))

@@ -8,4 +8,3 @@ class AppInfo:
     bundle_name: str
     bundle_id: str
     cert_team: str
-    cert_name: str
