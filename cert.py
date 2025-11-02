@@ -1,18 +1,14 @@
-import os
-
 from dataclasses import dataclass
 
 
 @dataclass
 class AppleDevelopmentCertificate:
+    bundle_namespace: str
     team: str
+    name: str
 
 
-def get_env(key: str) -> str:
-    if key not in os.environ:
-        raise Exception(f"no `{key}` environment variable found")
-    return os.environ[key]
+def parse_certificate(cert: str) -> AppleDevelopmentCertificate:
+    [bundle_namespace, team, name] = cert.split(";", 3)
 
-
-def apple_dev_cert_from_env() -> AppleDevelopmentCertificate:
-    return AppleDevelopmentCertificate(team=get_env("APPLE_DEVELOPMENT_CERT_TEAM"))
+    return AppleDevelopmentCertificate(bundle_namespace=bundle_namespace, team=team, name=name)

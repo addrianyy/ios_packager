@@ -22,7 +22,7 @@ def request_provisioning_profile(app: AppInfo, working_directory: str):
     specialize_template_to_file("CMakeLists.txt", f"{project_directory}/CMakeLists.txt", [
         ("BUNDLE_NAME", app.bundle_name),
         ("BUNDLE_IDENTIFIER", app.bundle_id),
-        ("TEAM_ID", app.cert_team),
+        ("TEAM_ID", app.cert.team),
     ])
 
     build_directory = f"{project_directory}/build"

@@ -30,11 +30,13 @@ def write_info_plist(path: str, app: AppInfo):
         "CSResourcesFileMapped": "NSHumanReadableCopyright",
         "UILaunchStoryboardName": "LaunchScreen",
         "UIApplicationSupportsIndirectInputEvents": True,
+        "UIDeviceFamily": [1, 2],
+        "CADisableMinimumFrameDurationOnPhone": True,
     })
 
 
 def write_entitlements_plist(path: str, app: AppInfo):
     write_plist(path, {
-        "application-identifier": f"{app.cert_team}.{app.bundle_id}",
+        "application-identifier": f"{app.cert.team}.{app.bundle_id}",
         "get-task-allow": True,
     })

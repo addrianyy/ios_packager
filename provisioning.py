@@ -48,7 +48,7 @@ def parse_provisioning_profile(full_path: str) -> Optional[ProvisioningProfile]:
 
 def collect_provisioning_profiles() -> list[ProvisioningProfile]:
     home_directory = os.path.expanduser('~')
-    provisioning_directory = f"{home_directory}/Library/MobileDevice/Provisioning Profiles"
+    provisioning_directory = f"{home_directory}/Library/Developer/Xcode/UserData/Provisioning Profiles"
 
     profiles: list[ProvisioningProfile] = []
 
@@ -61,7 +61,7 @@ def collect_provisioning_profiles() -> list[ProvisioningProfile]:
 
 
 def is_provisioning_profile_valid_for_app(profile: ProvisioningProfile, app: AppInfo) -> bool:
-    return (profile.bundle_id == app.bundle_id and profile.team_id == app.cert_team and
+    return (profile.bundle_id == app.bundle_id and profile.team_id == app.cert.team and
             profile.expiration_date > datetime.now())
 
 

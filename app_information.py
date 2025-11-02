@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from cert import AppleDevelopmentCertificate
+
 
 @dataclass
 class AppInfo:
@@ -7,4 +9,4 @@ class AppInfo:
     executable_name: str
     bundle_name: str
     bundle_id: str
-    cert_team: str
+    cert: AppleDevelopmentCertificate

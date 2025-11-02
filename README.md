@@ -3,8 +3,8 @@
 To package and sign iOS application run:
 
 ```
-python main.py application.app [bundle name] [bundle id] [executable name]
+./main.py application.app [cert] [bundle id postfix] [bundle name]? [executable name]?
 ```
 
-You need Apple Developer certificate and following environment variables:
-- `APPLE_DEVELOPMENT_CERT_TEAM` - certificate team ID
+- `cert` is `[bundle namespace];[team];[name]` (eg `adrian;ABC345;Apple Development: xyz@abc.com (XYZ123)`)
+- resulting bundle will have ID `com.[bundle namespace].[bundle id postfix]`
